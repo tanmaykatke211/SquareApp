@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Square App by Tanmay Katke</title>
+		<style>
+			*{font-size:50px;}
+			body{background-color:azure;}
+			h1{background-color:black; color:white; border-radius:40px; width:50%}
+		</style>
+	</head>
+	<body>
+	<center>
+		<h1>Square Finder App</h1>
+		<br/>
+		<form onsubmit = "find()">
+			<input type="number" step="any" placeholder="Enter a number" id="num"/>
+			<br/><br/>
+			<input type = "submit" value="Find Square"/>
+			<br/><br/>
+			<h2 id="msg"></msg>
+		</form>
+		<script>
+			function find()
+			{
+				event.preventDefault();
+				let num = document.getElementById("num");
+				let msg = document.getElementById("msg");
+
+				if (num.value === "")
+				{
+					alert("Number field is blank.");
+					msg.innerHTML= "";
+					num.focus();
+					return;
+				}
+			
+				let n = parseFloat(num.value);
+				let r = n*n;
+				let ans = "Square= " + r.toFixed(2);
+				msg.innerHTML = ans;
+			}
+
+			
+		</script>	
+	</center>
+	</body>
+</html>
